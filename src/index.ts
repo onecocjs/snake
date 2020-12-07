@@ -42,19 +42,9 @@ export function createProxy<T extends object>(
   const proxy = new Proxy(state, {
     get(target, property, receiver) {
       const value = Reflect.get(target, property, receiver);
-      // console.log(property, target.hasOwnProperty(property));
-
-      //如果不是我自身定义的属性
-      // if (!target.hasOwnProperty(property) && value !== void 0) {
-      //   return value;
-      // }
 
       // 如果是 symbol 类型 则直接返回
-      if (
-        SYMBOL_MATCH.some((x) => x === property) ||
-        typeof property === "symbol"
-      ) {
-        console.log(property);
+      if (typeof property === "symbol") {
         return value;
       }
 
