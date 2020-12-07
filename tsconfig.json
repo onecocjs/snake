@@ -4,9 +4,11 @@
     "target": "ES5",
     "esModuleInterop": true,
     "jsx": "react",
-    "sourceMap": false,
+    "sourceMap": true,
     "noEmitOnError": true,
-    "outDir": "lib"
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "lib"
   },
   "include": ["src"],
   "exclude": ["node_modules", "__tests__"]
